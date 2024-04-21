@@ -167,6 +167,6 @@ singleton_vOTUs <-
 
 vOTUs_GBT <- bind_rows(vOTUs, singleton_vOTUs)
 
-#This (vOTUs_GBT) is the final table reporting the representative contigs of each vOTU and the UViGs clustering with them
+#This (vOTUs_GBT) is the final table reporting the representative contigs of each vOTU (query) and the UViGs (reference) clustering with them
 
 
