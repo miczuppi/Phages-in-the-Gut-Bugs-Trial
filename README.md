@@ -10,5 +10,5 @@ For the identification of engrafted phages, the same [custom R script](https://g
 
 **UViGs relative abundance**
 
-To calculate the relative abundance of the UViGs, reads were initially mapped against a non redundant catalogue of viral genes using a [custom LINUX/UNIX script](https://github.com/miczuppi/Phages-in-the-Gut-Bugs-Trial/edit/main/run_read_mapping.sh). 
+To calculate the relative abundance of the UViGs, reads were initially mapped against a non redundant catalogue of viral genes using a [custom LINUX/UNIX script](https://github.com/miczuppi/Phages-in-the-Gut-Bugs-Trial/edit/main/run_read_mapping.sh). The relative abundance of individual UViGs was determined from the median CPM of their genes, calculated using a [custom R script](https://github.com/miczuppi/Phages-in-the-Gut-Bugs-Trial/blob/main/relative%20abundace.r). 
 
