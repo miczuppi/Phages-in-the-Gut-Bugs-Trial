@@ -90,13 +90,13 @@ gene_abundances_cpm <-
 
 gene_abundances_cpm$contig_id <- str_extract(gene_abundances_cpm$geneID, "^.*(?=(\\_))") 
 
-contig_median_cpm<- 
+UViGs_median_cpm<- 
   gene_abundances_cpm %>% 
   group_by(contig_id) %>% 
   summarise(median= median(CPM)) %>% 
   distinct(contig_id, .keep_all = T) %>% 
   ungroup()
 
-  #This (contig_median_cpm) is the file used for the analysis
+  #This (UViGs_median_cpm) is the file used for the analysis
 
 
