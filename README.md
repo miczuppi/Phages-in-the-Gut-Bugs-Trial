@@ -4,5 +4,4 @@ In this repository, we provide the custom codes used to characterize the gut pha
 
 Clustering of UViGs into vOTUs
 
-The UViGs were clustered into vOTUs according to MIUViG standards, _i.e._ 95% ANI over 85% AF of the shortest contig ([Roux et al, 2019](https://www.nature.com/articles/nbt.4306)). UViGs were compared with FastANI (_v_1.3.3)
-
+The UViGs were clustered into vOTUs according to MIUViG standards, _i.e._ 95% ANI over 85% AF of the shortest contig ([Roux et al, 2019](https://www.nature.com/articles/nbt.4306)). Clustering of the UViGs was performed based on length using the custom R script, and the longest UViG of the vOTU was selected as the representative. 
