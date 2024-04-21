@@ -25,6 +25,7 @@ learn_file="${rel_abund_dir}/${sample_id}.learn"
 #These require python v2.7.17
 bamfilter="${python_scripts}/bamfilter_mate_saver.py"
 bamcount="${python_scripts}/bam2counts.py"
+#Python files can be found on the GitHub repository
 
 # Reference catalog
 ref_catalog="${cluster_dir}/gbt_phages_gene_catalog"
