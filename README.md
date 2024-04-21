@@ -10,5 +10,5 @@ For the identification of engrafted phages, the same [custom R script](https://g
 
 **UViGs relative abundance**
 
-
+To calculate the relative abundance of the UViGs, reads were initially mapped against a non redundant catalogue of viral genes using a custom LINUX/UNIX script. 
 
