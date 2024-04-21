@@ -51,7 +51,8 @@ Length_vOTU <-
             #For engraftment analysis, divide the contigs based on sex and treatment group before dividing them based on length.
             #For clustering of all UViGs, ignore the next script. 
             
-                treatment <- readxl::read_excel("FMT_recipients.xlsx")
+                treatment <- readxl::read_excel("FMT_recipients.xlsx") #The FMT_recipients.xlsx file can be found in the GitHub repository
+                                                                       #https://github.com/miczuppi/Phages-in-the-Gut-Bugs-Trial/blob/main/FMT_recipients.xlsx
             
                   #Select only the FMT recipients
                   Length_vOTU <- 
