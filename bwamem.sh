@@ -26,6 +26,8 @@ learn_file="${rel_abund_dir}/${sample_id}.learn"
 bamfilter="${python_scripts}/bamfilter_mate_saver.py"
 bamcount="${python_scripts}/bam2counts.py"
 #Python files can be found on the GitHub repository
+  #https://github.com/miczuppi/Phages-in-the-Gut-Bugs-Trial/blob/main/bamfilter_mate_saver.py
+  #https://github.com/miczuppi/Phages-in-the-Gut-Bugs-Trial/blob/main/bam2counts.py
 
 # Reference catalog
 ref_catalog="${cluster_dir}/gbt_phages_gene_catalog"
