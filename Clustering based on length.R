@@ -47,6 +47,56 @@ Length_vOTU <-
   fastani %>% 
   left_join(., length_query, by = "query") %>% 
   left_join(., length_reference, by = "reference") 
+#############################################Engraftment clustering######################################################################
+            #For engraftment analysis, divide the contigs based on sex and treatment group before dividing them based on length.
+            #For clustering of all UViGs, ignore the next script. 
+            
+                treatment <- readxl::read_excel("FMT_recipients.xlsx")
+            
+                  #Select only the FMT recipients
+                  Length_vOTU <- 
+                    Length_vOTU %>%
+                    left_join(., treatment, by = c("Participant_ID_ref" = "Participant_ID")) %>%
+                    #Select only the Participant_IDs and the FMT recipients in query and reference
+                    #This way we exclude the clustering between treatment groups
+                    mutate(treatment_ref = if_else(grepl("D", Participant_ID_ref), "Participant_IDs", treatment)) %>% 
+                    #Remove placebo
+                    filter(!is.na(treatment_ref)) %>% 
+            #or
+                    #Remove FMT
+                    mutate(treatment_ref = replace_na(treatment_ref, "Placebo")) %>% 
+                    filter(treatment_ref != "FMT") %>% 
+            #
+                    select(-treatment) %>% 
+                    left_join(., treatment, by = c("Participant_ID_query" = "Participant_ID")) %>%
+                    mutate(treatment_query = if_else(grepl("D", Participant_ID_query), "Participant_IDs", treatment)) %>% 
+                    #Remove placebo
+                    filter(!is.na(treatment_query))%>%
+            #or
+                    #Remove FMT
+                    mutate(treatment_query = replace_na(treatment_query, "Placebo")) %>% 
+                    filter(treatment_query != "FMT") %>% 
+            #
+                    select(-treatment)
+            
+            #Divide by sex
+              
+            Length_vOTU <- 
+                length_der %>% 
+                mutate(sex_query = case_when(
+                  str_detect(Participant_ID_query, "F") ~ "Female",
+                  str_detect(Participant_ID_query, "M") ~ "Male"
+                )) %>% 
+                mutate(sex_ref = case_when(
+                  str_detect(Participant_ID_ref, "F") ~ "Female",
+                  str_detect(Participant_ID_ref, "M") ~ "Male"
+                )) %>% 
+                #Select females
+                filter(sex_query == "Female" & sex_ref == "Female")
+            #or
+                #Select males
+                filter(sex_query == "Male" & sex_ref == "Male")
+#############################################Engraftment clustering######################################################################      
 
 #Sort the clusters by length#####
 clusters_sorted_by_length <- 
