@@ -5,8 +5,8 @@ base_folder="path_to_dir"
 cluster_dir="${base_dir}/cluster"
 
 #set bwamem file location
-bwamem_file="${base_folder}/bwamem.sh"
-
+bwamem_file="${base_folder}/bwamem.sh" 
+#bwamem.sh file can be found on the GitHub repository
 # Reference catalog
 ref_catalog="${cluster_dir}/gbt_phages_gene_catalog"
 
